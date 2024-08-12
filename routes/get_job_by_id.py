@@ -1,14 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException
-from fastapi.responses import JSONResponse
-from functools import lru_cache
 
 from sqlalchemy.orm import Session
-from models.models import JobResponse, JobCreate, Job
+from models.models import JobResponse, Job
 
-from utils.utils import calculate_next_run, generate_id
 from utils.database_utils import get_db
 
-from typing import List
 
 router = APIRouter()
 

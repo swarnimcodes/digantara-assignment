@@ -8,22 +8,22 @@ import time
 from utils.database_utils import SessionLocal
 from models.models import Job
 
-ist = pytz.timezone("Asia/Kolkata")
+indian_standard_time = pytz.timezone("Asia/Kolkata")
 
 
 # Helper func to generate time based unique IDs
-def generate_id():
+def generate_id() -> str:
     return str(uuid.uuid1())
 
 
 # Helper func to calculate next run time
 def calculate_next_run(cron_string: str):
-    cron = croniter.croniter(cron_string, datetime.now(ist))
+    cron = croniter.croniter(cron_string, datetime.now(indian_standard_time))
     return cron.get_next(datetime)
 
 
 # Dummy task
-def number_crunching_task():
+def number_crunching_task() -> int:
     print("running task")
     result = 0
     for i in range(1000000):
@@ -32,10 +32,10 @@ def number_crunching_task():
 
 
 # Run tasks in background
-def run_jobs():
+def run_jobs() -> None:
     while True:
         with SessionLocal() as db:
-            current_time = datetime.now(ist)
+            current_time = datetime.now(indian_standard_time)
             jobs_to_run = db.query(Job).filter(Job.next_run <= current_time).all()
 
             for job in jobs_to_run:
