@@ -33,13 +33,13 @@ $ sudo pacman -Syu python git uv --needed
 
 **1. Clone the repository**
 
-```shell
+```sh
 $ git clone "https://github.com/swarnimcodes/digantara-assignment.git" && cd digantara-assignment
 ```
 
 **2. Create and activate virtual environment**
 
-```shell
+```sh
 $ uv venv && source .venv/bin/activate
 ```
 Why uv? ==> https://astral.sh/blog/uv
@@ -50,19 +50,19 @@ Using uv seems like a better choice from what I understand.
 
 **3. Install the project requirements**
 
-```shell
+```sh
 $ uv pip install -r requirements.txt
 ```
 
 OR if not using uv then:
 
-```shell
+```sh
 $ pip install -r requirements.txt
 ```
 
 **4. Run the Backend API:**
 
-```shell
+```sh
 $ python -m uvicorn scheduler:app --reload
 ```
 
