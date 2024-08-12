@@ -110,3 +110,13 @@ The API has the following endpoints:
   of the linux manual.
   You could also visit the online hosted documentation for crontab here: https://www.man7.org/linux/man-pages/man5/crontab.5.html
    
+## Possible Enhancements
+
+1. To make the code more robust and fault tolerant, edge cases can be handled more gracefully once the job to be scheduled is decided.
+  Currently we are using a dummy number crunching task as a background process.
+2. A better logging system can be designed that logs necessary steps in an easy to read format to a log file in the system.
+3. The application will easily scale with the number of cores available in the system due to multi-threading. The GIL could be
+  a potential bottleneck. There is some news regarding the removal of the GIL in python version 3.13 but that is quite forward into
+  the future.
+4. More validations and Bearer Token and JWT Authorizations will need to be added in place if this is to be deployed in production.
+  I have added an example middleware and the CORS middleware. Similarly Bearer Token and JWT middlewares could be added.
