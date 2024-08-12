@@ -26,7 +26,7 @@ The backend has the following features:
 
 **0. Get the dependencies**
 
-```shell
+```sh
 $ sudo pacman -Syu python git uv --needed
 ```
   This backend was tested to work on arch linux using python version 3.12.4
