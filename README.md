@@ -27,20 +27,20 @@ The backend has the following features:
 **0. Get the dependencies**
 
 ```bash
-$ sudo pacman -Syu python git uv --needed
+sudo pacman -Syu python git uv --needed
 ```
   This backend was tested to work on arch linux using python version 3.12.4
 
 **1. Clone the repository**
 
 ```bash
-$ git clone "https://github.com/swarnimcodes/digantara-assignment.git" && cd digantara-assignment
+git clone "https://github.com/swarnimcodes/digantara-assignment.git" && cd digantara-assignment
 ```
 
 **2. Create and activate virtual environment**
 
 ```bash
-$ uv venv && source .venv/bin/activate
+uv venv && source .venv/bin/activate
 ```
 Why uv? ==> https://astral.sh/blog/uv
 
@@ -51,19 +51,19 @@ Using uv seems like a better choice from what I understand.
 **3. Install the project requirements**
 
 ```bash
-$ uv pip install -r requirements.txt
+uv pip install -r requirements.txt
 ```
 
 OR if not using uv then:
 
 ```bash
-$ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 **4. Run the Backend API:**
 
 ```bash
-$ python -m uvicorn scheduler:app --reload
+python -m uvicorn scheduler:app --reload
 ```
 
 That's it. The backend should be up and running on port 8000 while also watching for any changes in the project files.
@@ -88,11 +88,21 @@ The API has the following endpoints:
 3. `POST /jobs`
   Create a new job with custom scheduling capabilities.
   Input needs to be a JSON Body of the following form:
+
     ```json
     {
       "cron_string": "string"
     }
     ```
+
+  For instance, if you want to run the job every day at 4:05 AM, then the cron string would be:
+
+    ```json
+    {
+      "cron_string": "5 4 * * *"
+    }
+    ```
+   
   You may use https://crontab.guru/ for a simple and intuitive cron syntax helper.
   Another wonderful piece of documentation is the manpage for crontab.
   If on a linux machine, type in `man 5 crontab` to bring up the documentation
