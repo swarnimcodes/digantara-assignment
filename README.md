@@ -24,20 +24,20 @@ The backend has the following features:
 
 ## Setup
 
-0. Get the dependencies
+**0. Get the dependencies**
 
 ```shell
 $ sudo pacman -Syu python git uv --needed
 ```
   This backend was tested to work on arch linux using python version 3.12.4
 
-1. Clone the repository
+**1. Clone the repository**
 
 ```shell
 $ git clone "https://github.com/swarnimcodes/digantara-assignment.git" && cd digantara-assignment
 ```
 
-2. Create and activate virtual environment
+**2. Create and activate virtual environment**
 
 ```shell
 $ uv venv && source .venv/bin/activate
@@ -48,7 +48,7 @@ This guide will work with the default way of creating virtual environments using
 as well. Source the envireonment to activate it before moving ahead.
 Using uv seems like a better choice from what I understand.
 
-3. Install the project requirements
+**3. Install the project requirements**
 
 ```shell
 $ uv pip install -r requirements.txt
@@ -60,7 +60,7 @@ OR if not using uv then:
 $ pip install -r requirements.txt
 ```
 
-4. Run the Backend API:
+**4. Run the Backend API:**
 
 ```shell
 $ python -m uvicorn scheduler:app --reload
@@ -68,7 +68,7 @@ $ python -m uvicorn scheduler:app --reload
 
 That's it. The backend should be up and running on port 8000 while also watching for any changes in the project files.
 
-5. Documentation:
+**5. Documentation:**
 
 Since we are using the brilliant FastAPI web framework, the API documentation is auto-generated through our code and is
 testable from within the documentation.
@@ -88,11 +88,11 @@ The API has the following endpoints:
 3. `POST /jobs`
   Create a new job with custom scheduling capabilities.
   Input needs to be a JSON Body of the following form:
-  ```json
-  {
-    "cron_string": "string"
-  }
-  ```
+    ```json
+    {
+      "cron_string": "string"
+    }
+    ```
   You may use https://crontab.guru/ for a simple and intuitive cron syntax helper.
   Another wonderful piece of documentation is the manpage for crontab.
   If on a linux machine, type in `man 5 crontab` to bring up the documentation
