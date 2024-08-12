@@ -1,6 +1,8 @@
 from sqlalchemy import create_engine, Column, String, DateTime
 from pydantic import BaseModel
 from datetime import datetime
+from utils.database_utils import Base
+
 import pytz
 
 ist = pytz.timezone("Asia/Kolkata")
