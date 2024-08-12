@@ -26,20 +26,20 @@ The backend has the following features:
 
 **0. Get the dependencies**
 
-```sh
+```bash
 $ sudo pacman -Syu python git uv --needed
 ```
   This backend was tested to work on arch linux using python version 3.12.4
 
 **1. Clone the repository**
 
-```sh
+```bash
 $ git clone "https://github.com/swarnimcodes/digantara-assignment.git" && cd digantara-assignment
 ```
 
 **2. Create and activate virtual environment**
 
-```sh
+```bash
 $ uv venv && source .venv/bin/activate
 ```
 Why uv? ==> https://astral.sh/blog/uv
@@ -50,19 +50,19 @@ Using uv seems like a better choice from what I understand.
 
 **3. Install the project requirements**
 
-```sh
+```bash
 $ uv pip install -r requirements.txt
 ```
 
 OR if not using uv then:
 
-```sh
+```bash
 $ pip install -r requirements.txt
 ```
 
 **4. Run the Backend API:**
 
-```sh
+```bash
 $ python -m uvicorn scheduler:app --reload
 ```
 
