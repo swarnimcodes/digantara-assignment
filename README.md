@@ -95,13 +95,13 @@ The API has the following endpoints:
     }
     ```
 
-  For instance, if you want to run the job every day at 4:05 AM, then the cron string would be:
+    For instance, if you want to run the job every day at 4:05 AM, then the cron string would be:
 
-    ```json
-    {
-      "cron_string": "5 4 * * *"
-    }
-    ```
+      ```json
+      {
+        "cron_string": "5 4 * * *"
+      }
+      ```
    
   You may use https://crontab.guru/ for a simple and intuitive cron syntax helper.
   Another wonderful piece of documentation is the manpage for crontab.
